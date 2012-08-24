@@ -57,4 +57,6 @@ WeddingWebsite::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
   
   root :to => 'pages#main'
+  
+  match 'registry' => 'pages#registry'
 end
