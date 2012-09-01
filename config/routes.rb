@@ -58,5 +58,6 @@ WeddingWebsite::Application.routes.draw do
   
   root :to => 'pages#main'
   
+  match 'details' => 'pages#details'
   match 'registry' => 'pages#registry'
 end
