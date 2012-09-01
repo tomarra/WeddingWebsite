@@ -60,4 +60,6 @@ WeddingWebsite::Application.routes.draw do
   
   match 'details' => 'pages#details'
   match 'registry' => 'pages#registry'
+  
+  match 'rsvp' => 'rsvp#main'
 end
