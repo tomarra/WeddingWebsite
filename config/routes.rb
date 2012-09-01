@@ -1,4 +1,10 @@
 WeddingWebsite::Application.routes.draw do
+  get "registry/index"
+
+  get "details/index"
+
+  get "gallery/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -56,10 +62,11 @@ WeddingWebsite::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   
-  root :to => 'pages#main'
+  root :to => 'pages#main', :as => :home
   
-  match 'details' => 'pages#details'
-  match 'registry' => 'pages#registry'
+  match 'details' => 'details#index', :as => :details
+  match 'registry' => 'registry#index', :as => :registry
+  match 'gallery' => 'gallery#index', :as => :gallery
   
   match 'rsvp' => 'rsvp#main'
 end

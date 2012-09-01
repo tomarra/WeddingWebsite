@@ -9,10 +9,11 @@
 	  <a class="brand" href="/">Tommy & Sarah</a>
 	  <div class="nav-collapse">
 		<ul class="nav">
-		  <li id="home_navbar"><a href="/">Home</a></li>
-		  <li id="details_navbar"><a href="/details">Details</a></li>
-		  <li id="registry_navbar"><a href="/registry">Registry</a></li>
-		  <li id="rsvp_navbar"><a href="/rsvp">RSVP</a></li>
+		  <li id="home_navbar" class="<%= 'active' if params[:controller] == 'pages' %>"><a href="/">Home</a></li>
+		  <li id="details_navbar" class="<%= 'active' if params[:controller] == 'details' %>"><a href="/details">Details</a></li>
+		  <li id="registry_navbar" class="<%= 'active' if params[:controller] == 'registry' %>"><a href="/registry">Registry</a></li>
+		  <li id="gallery_navbar" class="<%= 'active' if params[:controller] == 'gallery' %>"><a href="/gallery">Gallery</a></li>
+		  <li id="rsvp_navbar" class="<%= 'active' if params[:controller] == 'rsvp' %>"><a href="/rsvp">RSVP</a></li>
 		</ul>
 	  </div><!--/.nav-collapse -->
 	</div>
