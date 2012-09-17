@@ -1,21 +1,21 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
-	<div class="container">
-	  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	  </a>
-	  <a class="brand" href="/">Tommy & Sarah</a>
-	  <div class="nav-collapse">
-		<ul class="nav">
-		  <li id="home_navbar" class="<%= 'active' if params[:controller] == 'pages' %>"><a href="/">Home</a></li>
-		  <li id="details_navbar" class="<%= 'active' if params[:controller] == 'details' %>"><a href="/details">Details</a></li>
-		  <li id="registry_navbar" class="<%= 'active' if params[:controller] == 'registry' %>"><a href="/registry">Registry</a></li>
-		  <li id="gallery_navbar" class="<%= 'active' if params[:controller] == 'gallery' %>"><a href="/gallery">Gallery</a></li>
-		  <li id="rsvp_navbar" class="<%= 'active' if params[:controller] == 'rsvp' %>"><a href="/rsvp">RSVP</a></li>
-		</ul>
-	  </div><!--/.nav-collapse -->
-	</div>
+		<div class="container">
+			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		  <a class="brand" href="/">Tommy & Sarah</a>
+		  <div class="nav-collapse collapse">
+				<ul class="nav">
+				  <li id="home_navbar" class="<%= 'active' if params[:controller] == 'pages' %>"><a href="/">Home</a></li>
+				  <li id="details_navbar" class="<%= 'active' if params[:controller] == 'details' %>"><a href="/details">Details</a></li>
+				  <li id="registry_navbar" class="<%= 'active' if params[:controller] == 'registry' %>"><a href="/registry">Registry</a></li>
+				  <li id="gallery_navbar" class="<%= 'active' if params[:controller] == 'gallery' %>"><a href="/gallery">Gallery</a></li>
+				  <li id="rsvp_navbar" class="<%= 'active' if params[:controller] == 'rsvp' %>"><a href="/rsvp">RSVP</a></li>
+				</ul>
+		  </div><!--/.nav-collapse -->
+		</div>
   </div>
 </div>
