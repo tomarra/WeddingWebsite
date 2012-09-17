@@ -6,14 +6,14 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-		  <a class="brand" href="/">Tommy & Sarah</a>
+		  <a class="brand" href="/"><%=t :tommy_and_sarah %></a>
 		  <div class="nav-collapse collapse">
 				<ul class="nav">
-				  <li id="home_navbar" class="<%= 'active' if params[:controller] == 'pages' %>"><a href="/">Home</a></li>		  
-				  <li id="details_navbar" class="<%= 'active' if params[:controller] == 'details' %>"><a href="/details">Details</a></li>
-				  <li id="registry_navbar" class="<%= 'active' if params[:controller] == 'registry' %>"><a href="/registry">Registry</a></li>
-				  <li id="gallery_navbar" class="<%= 'active' if params[:controller] == 'gallery' %>"><a href="/gallery">Gallery</a></li>
-				  <li id="rsvp_navbar" class="<%= 'active' if params[:controller] == 'rsvp' %>"><a href="/rsvp">RSVP</a></li>
+				  <li id="home_navbar" class="<%= 'active' if params[:controller] == 'pages' %>"><a href="/"><%=t :navbar_home %></a></li>		  
+				  <li id="details_navbar" class="<%= 'active' if params[:controller] == 'details' %>"><a href="/details"><%=t :navbar_details %></a></li>
+				  <li id="registry_navbar" class="<%= 'active' if params[:controller] == 'registry' %>"><a href="/registry"><%=t :navbar_registry %></a></li>
+				  <li id="gallery_navbar" class="<%= 'active' if params[:controller] == 'gallery' %>"><a href="/gallery"><%=t :navbar_gallery %></a></li>
+				  <li id="rsvp_navbar" class="<%= 'active' if params[:controller] == 'rsvp' %>"><a href="/rsvp"><%=t :navbar_rsvp %></a></li>
 				</ul>
 		  </div><!--/.nav-collapse -->
 		</div>

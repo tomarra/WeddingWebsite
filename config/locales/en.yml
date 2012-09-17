@@ -1,5 +1,13 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  #Global
+  tommy_and_sarah: Tommy & Sarah
+  
+  #Navbar
+  navbar_home: Home
+  navbar_details: Details
+  navbar_registry: Registry
+  navbar_gallery: Gallery
+  navbar_rsvp: RSVP
+  
+  #Main Page
+  days_to_go: Days to Go!
