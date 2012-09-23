@@ -2,4 +2,9 @@
 
 Simple website for the wedding
 
+=== Heroku Environment Variables
+
+* HEROKU_ENV
+   * Should be set to 'test' or 'production' in order to identify the environment
+
 
