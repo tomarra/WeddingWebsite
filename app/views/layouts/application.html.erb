@@ -15,5 +15,6 @@
     <%= yield %>
     <%= render 'layouts/footer' %>
   </div>
+  <%= render 'layouts/googleAnalytics' if ENV['HEROKU_ENV'] == 'production' %>
 </body>
 </html>
