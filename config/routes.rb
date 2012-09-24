@@ -1,4 +1,8 @@
 WeddingWebsite::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   get "registry/index"
 
   get "details/index"
