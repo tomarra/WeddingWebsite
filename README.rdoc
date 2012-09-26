@@ -6,5 +6,35 @@ Simple website for the wedding
 
 * HEROKU_ENV
    * Should be set to 'test' or 'production' in order to identify the environment
+   
+=== Database Schema
 
+Trying to document my idea on how to setup the database.
 
+* Meals
+   * Name
+   
+* Titles
+   * Name
+   
+* People
+   * Title Id (FK)
+   * First Name
+   * Last Name
+   * Guest Allowed (boolean)
+   * Party Id (FK)
+   
+* Guests
+   * Title Id (FK)
+   * First Name
+   * Last Name
+   * Person Id (FK)
+   * Party Id (FK)
+
+* Parties
+   * Name
+
+* Responses
+   * Person Id (FK)
+   * Attending (boolean)
+   * Meal Id (FK)
