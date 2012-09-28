@@ -15,9 +15,17 @@ Simple website for the wedding
 * HEROKU_ENV
    * Should be set to 'test' or 'production' in order to identify the environment
    
-=== Database Schema
+=== Database
 
 Trying to document my idea on how to setup the database.
+
+==== Implementation Notes
+
+Data will be populated (hopefully via script) into the parties and people tables. When a user types in their first and last name they are looked up and their data for their party is shown on screen. Each person is given the ability to say if they are attending or not and a choice for the meal along with any allegeries (meal notes). 
+
+Some guests are allowed to bring guests. If the flag is set to true then extra fields are shown for a guests name and meal prefrence and note. This data is used to create a new row in the people table for the guest and a row in the repsonses table.
+
+==== Schema
 
 * Meals
    * Name
@@ -29,20 +37,20 @@ Trying to document my idea on how to setup the database.
    * Title Id (FK)
    * First Name
    * Last Name
+   * Party Id (FK)
    * Guest Allowed (boolean)
-   * Party Id (FK)
-   
-* Guests
-   * Title Id (FK)
-   * First Name
-   * Last Name
-   * Person Id (FK)
-   * Party Id (FK)
+   * Is a Guest (boolean)
 
 * Parties
    * Name
+   * Address
+   * City
+   * State
+   * Zip Code
 
 * Responses
    * Person Id (FK)
    * Attending (boolean)
    * Meal Id (FK)
+   * Meal Notes
+   
