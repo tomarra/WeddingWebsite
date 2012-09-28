@@ -2,6 +2,14 @@
 
 Simple website for the wedding
 
+=== Version Log
+
+* v1.0
+   * First push to production.
+
+* v1.1
+   * Fix for grey hearts on IE desktop and mobile
+
 === Heroku Environment Variables
 
 * HEROKU_ENV
