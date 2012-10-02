@@ -9,6 +9,9 @@ Simple website for the wedding
 
 * v1.1
    * Fix for grey hearts on IE desktop and mobile
+   
+* v1.2
+   * Adding meta keyword tag hoping to improve SEO
 
 === Heroku Environment Variables
 
