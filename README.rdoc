@@ -12,6 +12,11 @@ Simple website for the wedding
    
 * v1.2
    * Adding meta keyword tag hoping to improve SEO
+   
+* v1.3
+   * Added Last names to the home page
+   * Fixed Chruch Address
+   * Start of making things tweakable via config file
 
 === Heroku Environment Variables
 
