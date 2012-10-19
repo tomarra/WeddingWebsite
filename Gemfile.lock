@@ -72,6 +72,8 @@ GEM
       activesupport (= 3.2.7)
       bundler (~> 1.0)
       railties (= 3.2.7)
+    rails_config (0.3.1)
+      activesupport (>= 3.0)
     railties (3.2.7)
       actionpack (= 3.2.7)
       activesupport (= 3.2.7)
@@ -113,6 +115,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 3.2.7)
+  rails_config
   sass-rails (~> 3.2.3)
   thin
   uglifier (>= 1.0.3)

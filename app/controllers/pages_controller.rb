@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
 	def main		
-		@daysToGo = (Date.new(2013, 4, 6) - Date.today).to_i
+		@daysToGo = (Date.new(Settings.wedding_date_year, Settings.wedding_date_month, Settings.wedding_date_day) - Date.today).to_i
 	end
 end
