@@ -1,7 +1,13 @@
 # Site Global
-
+groom_first_name: Tommy
+groom_last_name: Arra
+bride_first_name: Sarah
+bride_last_name: Cervak
 
 # Main Page
 wedding_date_month: 4
 wedding_date_day: 6
 wedding_date_year: 2013
+
+#RSVP
+rsvp_form_password: arra

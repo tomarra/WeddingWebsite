@@ -69,4 +69,5 @@ WeddingWebsite::Application.routes.draw do
   match 'gallery' => 'gallery#index', :as => :gallery
   
   match 'rsvp' => 'rsvp#main'
+  match 'rsvp/search' => 'rsvp#search'
 end

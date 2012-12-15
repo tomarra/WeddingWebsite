@@ -6,4 +6,14 @@
 
 <hr/>
 
-<p>The RSVP function of this site will turn on once invitations have been sent out.</p>
+<%= render "shared/flash_container" %>
+
+<%= form_tag("/rsvp/search", :method => "post") do %>
+	<%= label_tag(:last_name, "Last Name:") %>
+	<%= text_field_tag(:last_name) %>
+	
+	<%= label_tag(:password, "Password:") %>
+	<%= password_field_tag(:password) %>
+	
+	<%= submit_tag("Search") %>
+<% end %>
