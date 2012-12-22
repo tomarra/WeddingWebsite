@@ -11,6 +11,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20121222144530) do
+
+  create_table "parties", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip_code"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "people", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "party_id"
+    t.boolean  "guest_allowed"
+    t.string   "is_guest"
+    t.string   "boolean"
+    t.integer  "guest_person_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "responses", :force => true do |t|
+    t.integer  "person_id"
+    t.boolean  "attending"
+    t.string   "meal"
+    t.text     "meal_notes"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

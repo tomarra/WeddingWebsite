@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  party_id: 1
+  guest_allowed: false
+  is_guest: MyString
+  boolean: MyString
+  guest_person_id: 1
+
+two:
+  first_name: MyString
+  last_name: MyString
+  party_id: 1
+  guest_allowed: false
+  is_guest: MyString
+  boolean: MyString
+  guest_person_id: 1
