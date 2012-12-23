@@ -13,6 +13,9 @@
   <%= render 'layouts/header' %>
   <div class="container">
     <div style="padding-top:60px;" class="visible-desktop"></div>    
+
+    <%= render 'shared/flash_container' if !request.env['PATH_INFO'].starts_with? "/rsvp" %>
+
     <%= yield %>
     <%= render 'layouts/footer' %>
   </div>

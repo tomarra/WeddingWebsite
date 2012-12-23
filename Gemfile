@@ -1,15 +1,22 @@
 source 'https://rubygems.org'
 
+# Global gems
 gem 'rails', '3.2.7'
 gem 'pg'
 gem 'jquery-rails'
 gem 'thin'
 gem 'rails_config'
 
+# ActiveAdmin
+gem 'activeadmin'
+gem 'sass-rails'
+gem "meta_search",    '>= 1.1.0.pre'
+gem 'devise'
+
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
