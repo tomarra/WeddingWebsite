@@ -5,8 +5,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :last_name
       t.integer :party_id
       t.boolean :guest_allowed
-      t.string :is_guest
-      t.string :boolean
+      t.boolean :is_guest
       t.integer :guest_person_id
 
       t.timestamps

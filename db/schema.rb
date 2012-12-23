@@ -61,8 +61,7 @@ ActiveRecord::Schema.define(:version => 20121222145743) do
     t.string   "last_name"
     t.integer  "party_id"
     t.boolean  "guest_allowed"
-    t.string   "is_guest"
-    t.string   "boolean"
+    t.boolean  "is_guest"
     t.integer  "guest_person_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
