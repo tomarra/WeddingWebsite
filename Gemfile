@@ -12,6 +12,7 @@ gem 'activeadmin'
 gem 'sass-rails'
 gem "meta_search",    '>= 1.1.0.pre'
 gem 'devise'
+gem 'active_admin_importable'
 
 
 # Gems used only for assets and not required

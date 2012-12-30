@@ -1,5 +1,5 @@
 class Response < ActiveRecord::Base
-  attr_accessible :attending, :meal, :meal_notes, :person_id
+  belongs_to :person
 
-  meals = Array.new("Chicken", "Vegetarian")
+  attr_accessible :attending, :meal, :meal_notes, :person_id
 end
