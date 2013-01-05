@@ -1,0 +1,86 @@
+<h1>RSVP - Party Detail</h1>
+
+<%= form_tag("/rsvp/submit", :method => "post", :class => "form-horizontal") do %>
+	<% for person in @people %>
+		<h3><%= person.first_name %> <%= person.last_name %></h3>
+
+		<hr />
+
+		<label class="radio">
+			<%= radio_button_tag "radio_" + person.id.to_s, "attending", false, :id => "radio_" + person.id.to_s + "_attending", :onchange => "attendingRadioChange(" + person.id.to_s + ");" %> 
+			Attending
+		</label>
+
+		<div id="extra_options_<%= person.id %>" class="hide">
+			<div class="control-group">
+				<%= label_tag(:meal_option, "Meal Option:", :class => "control-label") %>
+				<div class="controls">
+					<%= select_tag "person_" + person.id.to_s + "_meal_option", "<option>Chicken</option><option>Vegitarian</option>".html_safe %>
+				</div>
+			</div>
+
+			<% if person.guest_allowed %>
+				<div class="control-group">
+					<%= label_tag(:meal_option, "Bringing Guest:", :class => "control-label") %>
+					<div class="controls">
+						<%= check_box_tag "checkbox_" + person.id.to_s + "_bringing_guest", "bringing_guest_" + person.id.to_s, false, :onchange => "guestCheckBoxChange(" + person.id.to_s + ");" %> Check for Yes
+					</div>
+				</div>
+
+				<div id="guest_options_<%= person.id %>" class="hide">
+					<div class="control-group">
+						<%= label_tag(:guest_first_name, "Guest First Name:", :class => "control-label") %>
+						<div class="controls">
+							<%= text_field_tag(:guest_first_name, "", :placeholder => "Guest First Name") %>
+						</div>
+					</div>
+
+					<div class="control-group">
+						<%= label_tag(:guest_last_name, "Guest Last Name:", :class => "control-label") %>
+						<div class="controls">
+							<%= text_field_tag(:guest_last_name, "", :placeholder => "Guest Last Name") %>
+						</div>
+					</div>
+
+					<div class="control-group">
+						<%= label_tag(:meal_option_guest, "Guest Meal Option:", :class => "control-label") %>
+						<div class="controls">
+							<%= select_tag "person_" + person.id.to_s + "_guest_meal_option", "<option>Chicken</option><option>Vegitarian</option>".html_safe %>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+
+		<label class="radio">
+			<%= radio_button_tag "radio_" + person.id.to_s, "not_attending", false, :id => "radio_" + person.id.to_s + "_not_attending", :onchange => "attendingRadioChange(" + person.id.to_s + ");" %> 
+			Not Attending
+		</label>
+
+		<hr />
+	<% end %>
+
+	<%= submit_tag("Submit", :class => "btn") %>
+<% end %>
+
+<script>
+	function attendingRadioChange(personId) {
+		if(document.getElementById("radio_" + personId + "_attending").checked) {
+			//Show the extra options
+			document.getElementById("extra_options_" + personId).setAttribute("class", "show");
+		}
+		else {
+			//Hide the extra options
+			document.getElementById("extra_options_" + personId).setAttribute("class", "hide");
+		}
+	}
+
+	function guestCheckBoxChange(personId) {
+		if(document.getElementById("checkbox_" + personId + "_bringing_guest").checked) {
+			document.getElementById("guest_options_" + personId).setAttribute("class", "show");
+		}
+		else {
+			document.getElementById("guest_options_" + personId).setAttribute("class", "hide");
+		}
+	}
+</script>

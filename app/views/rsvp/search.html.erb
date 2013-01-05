@@ -1,1 +1,28 @@
-<h1>Search</h1>
+<h1>RSVP - Search</h1>
+
+<div id="parties">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Party Name</th>
+				<th>Zip Code</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% for party in @parties %>
+				<tr>
+					<td><%= party.name %></td>
+					<td><%= party.zip_code %></td>
+					<td><%= button_tag "Select Party", :class => "btn", :onclick => "goToParty(" + party.id.to_s + ")" %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+<script>
+	function goToParty(id) {
+		document.location.href = "/rsvp/party_detail/" + id;
+	}
+</script>
