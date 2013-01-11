@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Global gems
-gem 'rails', '3.2.7'
+gem 'rails', '3.2.11'
 gem 'pg'
 gem 'jquery-rails'
 gem 'thin'
