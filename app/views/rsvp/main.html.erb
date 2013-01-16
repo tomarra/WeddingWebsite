@@ -4,28 +4,34 @@
 	</div>
 </div>
 
-<hr/>
+<hr />
 
-<%= render "shared/flash_container" %>
+<% if Settings.rsvp_active %>
+	<%= render "shared/flash_container" %>
 
-<%= form_tag("/rsvp/search", :method => "post", :class => "form-horizontal") do %>
-	<div class="control-group">
-		<%= label_tag(:last_name, "Last Name:", :class => "control-label") %>
-		<div class="controls">
-			<%= text_field_tag(:last_name, "", :placeholder => "Last Name") %>
+	<%= form_tag("/rsvp/search", :method => "post", :class => "form-horizontal") do %>
+		<div class="control-group">
+			<%= label_tag(:last_name, "Last Name:", :class => "control-label") %>
+			<div class="controls">
+				<%= text_field_tag(:last_name, "", :placeholder => "Last Name") %>
+			</div>
 		</div>
-	</div>
-	
-	<div class="control-group">
-		<%= label_tag(:password, "Password:", :class => "control-label") %>
-		<div class="controls">
-			<%= password_field_tag(:password, "", :placeholder => "Password") %>
+		
+		<div class="control-group">
+			<%= label_tag(:password, "Password:", :class => "control-label") %>
+			<div class="controls">
+				<%= password_field_tag(:password, "", :placeholder => "Password") %>
+			</div>
 		</div>
-	</div>
 
-	<div class="control-group">
-		<div class="controls">
-			<%= submit_tag("Search", :class => "btn") %>
+		<div class="control-group">
+			<div class="controls">
+				<%= submit_tag("Search", :class => "btn") %>
+			</div>
 		</div>
-	</div>
+	<% end %>
+<% else %>
+
+	<p>The RSVP function of this site will turn on once invitations have been sent out.</p>
+
 <% end %>
