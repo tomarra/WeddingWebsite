@@ -1,0 +1,29 @@
+<h1>Listing responses</h1>
+
+<table>
+  <tr>
+    <th>Attending</th>
+    <th>Meal</th>
+    <th>Meal notes</th>
+    <th>Person</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @responses.each do |response| %>
+  <tr>
+    <td><%= response.attending %></td>
+    <td><%= response.meal %></td>
+    <td><%= response.meal_notes %></td>
+    <td><%= response.person_id %></td>
+    <td><%= link_to 'Show', response %></td>
+    <td><%= link_to 'Edit', edit_response_path(response) %></td>
+    <td><%= link_to 'Destroy', response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Response', new_response_path %>

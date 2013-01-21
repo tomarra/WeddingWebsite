@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  attending: false
+  meal: MyString
+  meal_notes: MyString
+  person_id: 1
+
+two:
+  attending: false
+  meal: MyString
+  meal_notes: MyString
+  person_id: 1

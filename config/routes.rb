@@ -1,4 +1,10 @@
 WeddingWebsite::Application.routes.draw do
+  resources :responses
+
+  resources :people
+
+  resources :parties
+
   get "registry/index"
 
   get "details/index"
