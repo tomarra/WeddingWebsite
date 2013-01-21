@@ -10,4 +10,6 @@ class Party < ActiveRecord::Base
   validates_presence_of :zip_code
 
   validates_length_of :zip_code, :minimum => 5, :too_short => "Zip code is at least 5 digits"
+
+  accepts_nested_attributes_for :people
 end

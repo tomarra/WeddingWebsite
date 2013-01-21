@@ -10,4 +10,6 @@ class Person < ActiveRecord::Base
   validates_presence_of :first_name
   validates_presence_of :last_name
   validates_presence_of :party_id
+
+  accepts_nested_attributes_for :response
 end
