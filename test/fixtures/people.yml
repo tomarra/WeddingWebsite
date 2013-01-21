@@ -3,17 +3,15 @@
 one:
   first_name: MyString
   last_name: MyString
-  party_id: 1
   guest_allowed: false
-  is_guest: MyString
-  boolean: MyString
+  is_guest: false
   guest_person_id: 1
+  party_id: 1
 
 two:
   first_name: MyString
   last_name: MyString
-  party_id: 1
   guest_allowed: false
-  is_guest: MyString
-  boolean: MyString
+  is_guest: false
   guest_person_id: 1
+  party_id: 1

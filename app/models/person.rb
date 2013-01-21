@@ -1,5 +1,6 @@
 class Person < ActiveRecord::Base
   belongs_to :party
+  has_one :response
 
   scope :invited, where(:is_guest => false)
   scope :guest, where(:is_guest => true)
