@@ -10,5 +10,5 @@ wedding_date_day: 6
 wedding_date_year: 2013
 
 #RSVP
-rsvp_active: true
+rsvp_active: false
 rsvp_form_password: arra
