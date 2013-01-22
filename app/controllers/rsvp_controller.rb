@@ -41,7 +41,7 @@ class RsvpController < ApplicationController
 			return
 		end
 
-		@people = Person.find(:all, :conditions => [ "party_id = ?", params[:id]])
+		@party = Party.find(params[:id])
 		@meal_options = ["Chicken", "Vegitarian"]
 	end
 end
