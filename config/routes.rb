@@ -1,5 +1,4 @@
 WeddingWebsite::Application.routes.draw do
-  resources :responses
 
   resources :people
 
@@ -77,5 +76,5 @@ WeddingWebsite::Application.routes.draw do
   match 'rsvp' => 'rsvp#main'
   match 'rsvp/search' => 'rsvp#search'
   match 'rsvp/party_detail/:id' => 'rsvp#party_detail'
-  match 'rsvp/submit' => 'rsvp#submit'
+  match 'rsvp/submit/:id' => 'rsvp#submit'
 end

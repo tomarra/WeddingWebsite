@@ -1,10 +1,52 @@
 <h1>RSVP - Party Detail</h1>
 
-<%= form_for @party, :url => { :action => "submit" } do |f| %>
-	<% for person in @party.people %>
+<%= form_for @party, :url => { :controller => "rsvp", :action => "submit" } do |f| %>
+	<%= f.fields_for :people do |builder| %>
+		<% person = builder.object %>
 		<h3><%= person.first_name %> <%= person.last_name %></h3>
+		<hr/>
 
-		<hr />
+			<% if person.is_guest? %>
+				<div>
+					<h4>Guest for <%= person.guest_of.first_name %> <%= person.guest_of.last_name %></h4>
+				</div>
+				<%= builder.text_field :first_name %>
+				<%= builder.text_field :last_name %>
+			<% else %>
+				<label class="radio">
+					<%= builder.radio_button :attending, true, :onchange => "attendingRadioChange(" + person.id.to_s + ", true);", :onclick => "attendingRadioChange(" + person.id.to_s + ", true);"%> 
+					<%= builder.label :attending_true, "Attending" %>
+				</label>
+
+				<label class="radio">
+					<%= builder.radio_button :attending, false, :onchange => "attendingRadioChange(" + person.id.to_s + ", false);", :onclick => "attendingRadioChange(" + person.id.to_s + ", false);"%>
+					<%= builder.label :attending_false, "Not Attending" %>
+				</label>
+			<% end %>
+
+			<div id="details_for_<%= person.id %>" class="hide">
+				<div class="control-group">
+					<%= builder.label(:meal, "Meal:", :class => "control-label") %>
+					<div class="controls">
+						<%= builder.select "meal", ["Chicken", "Veggie", "Child 1-10"] %>
+					</div>
+				</div>
+
+				<% if person.guest_allowed %>
+					<div>
+						Bringing Guest
+					</div>
+					<label class="radio">
+						<%= builder.radio_button :bringing_guest, true %> 
+						<%= builder.label :bringing_guest_true, "Yes" %>
+					</label>
+
+					<label class="radio">
+						<%= builder.radio_button :bringing_guest, false %> 
+						<%= builder.label :bringing_guest_false, "No" %>
+					</label>
+				<% end%>
+			</div>
 
 	<% end %>
 
@@ -12,23 +54,14 @@
 <% end %>
 
 <script>
-	function attendingRadioChange(personId) {
-		if(document.getElementById("radio_" + personId + "_attending").checked) {
+	function attendingRadioChange(personId, attending) {
+		if(attending) {
 			//Show the extra options
-			document.getElementById("extra_options_" + personId).setAttribute("class", "show");
+			document.getElementById("details_for_" + personId).setAttribute("class", "show");
 		}
 		else {
 			//Hide the extra options
-			document.getElementById("extra_options_" + personId).setAttribute("class", "hide");
-		}
-	}
-
-	function guestCheckBoxChange(personId) {
-		if(document.getElementById("checkbox_" + personId + "_bringing_guest").checked) {
-			document.getElementById("guest_options_" + personId).setAttribute("class", "show");
-		}
-		else {
-			document.getElementById("guest_options_" + personId).setAttribute("class", "hide");
+			document.getElementById("details_for_" + personId).setAttribute("class", "hide");
 		}
 	}
 </script>

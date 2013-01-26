@@ -41,7 +41,15 @@ class RsvpController < ApplicationController
 			return
 		end
 
-		@party = Party.find(params[:id])
+		@party = Party.includes(:people).find(params[:id])
 		@meal_options = ["Chicken", "Vegitarian"]
+	end
+
+	def submit
+		@party = Party.find(params[:id])
+
+		unless @party.update_attributes(params[:party])
+			#fail case
+		end
 	end
 end

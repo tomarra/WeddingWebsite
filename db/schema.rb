@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130121004140) do
+ActiveRecord::Schema.define(:version => 20130121004122) do
 
   create_table "parties", :force => true do |t|
     t.string   "name"
@@ -30,17 +30,12 @@ ActiveRecord::Schema.define(:version => 20130121004140) do
     t.boolean  "is_guest"
     t.integer  "guest_person_id"
     t.integer  "party_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  create_table "responses", :force => true do |t|
     t.boolean  "attending"
     t.string   "meal"
     t.string   "meal_notes"
-    t.integer  "person_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "bringing_guest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

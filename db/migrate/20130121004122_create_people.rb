@@ -7,6 +7,10 @@ class CreatePeople < ActiveRecord::Migration
       t.boolean :is_guest
       t.integer :guest_person_id
       t.integer :party_id
+      t.boolean :attending
+      t.string :meal
+      t.string :meal_notes
+      t.boolean :bringing_guest
 
       t.timestamps
     end
