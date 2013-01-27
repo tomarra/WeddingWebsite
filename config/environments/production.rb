@@ -16,7 +16,7 @@ WeddingWebsite::Application.configure do
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   # CHANGED TO TRUE FOR ACTIVE ADMIN
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
