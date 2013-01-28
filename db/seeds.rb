@@ -46,34 +46,116 @@ Person.create!(first_name: 'Stephanie', last_name: 'Kelly', party_id: @party.id,
 @person = Person.create!(first_name: 'George', last_name: 'LaForte', party_id: @party.id, guest_allowed: true)
 Person.create!(first_name: '', last_name: '', party_id: @party.id, is_guest: true, guest_person_id: @person.id, guest_allowed: false)
 
-
 @party = Party.create!(name:'Lamacki', address:'680 North Lake Shore Drive, #1205', city:'Chicago', state:'IL', zip_code:'60611')
+Person.create!(first_name: 'Walter', last_name: 'Lamacki', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Gloria', last_name: 'Lamacki', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Murphy', address:'611 West Russet Lane', city:'Mequon', state:'WI', zip_code:'53092')
+Person.create!(first_name: 'John', last_name: 'Murphy', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: '?', last_name: 'Murphy', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Polo', address:'11011 Stratford', city:'Willow Springs', state:'IL', zip_code:'60480')
+@person = Person.create!(first_name: 'Kathy', last_name: 'Polo', party_id: @party.id, guest_allowed: true)
+Person.create!(first_name: '', last_name: '', party_id: @party.id, is_guest: true, guest_person_id: @person.id, guest_allowed: false)
+
 @party = Party.create!(name:'Tokarz', address:'11147 West 84th Place', city:'Willow Springs', state:'IL', zip_code:'60480')
+Person.create!(first_name: 'Kenneth', last_name: 'Tokarz', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: '?', last_name: 'Tokarz', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Beach', address:'8645 South Newland Avenue', city:'Burbank', state:'IL', zip_code:'60459')
+Person.create!(first_name: 'Robert', last_name: 'Beach', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Hunt', address:'9721 South McVicker', city:'Oak Lawn', state:'IL', zip_code:'60453')
+Person.create!(first_name: 'Robert', last_name: 'Hunt', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: '?', last_name: 'Hunt', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Napoli', address:'844 East Virginia', city:'Glendora', state:'CA', zip_code:'91741')
+Person.create!(first_name: 'Vito', last_name: 'Napoli', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: '?', last_name: 'Napoli', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'McCarthy', address:'12153 Black Forest Trail', city:'Homer Glen', state:'IL', zip_code:'60491')
+Person.create!(first_name: 'Charles', last_name: 'McCarthy', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: '?', last_name: 'McCarthy', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Arra', address:'416 University Avenue', city:'Los Altos', state:'CA', zip_code:'94022')
+Person.create!(first_name: 'Daniel', last_name: 'Arra', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Patrica', last_name: 'Arra', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Robinson', address:'26526 West Stonebriar Way', city:'Channahon', state:'IL', zip_code:'60410')
+Person.create!(first_name: 'Edward', last_name: 'Robinson', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: '?', last_name: 'Robinson', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Losito', address:'3928 West 82nd Place', city:'Chicago', state:'IL', zip_code:'60652')
+Person.create!(first_name: 'Francis', last_name: 'Losito', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: '?', last_name: 'Losito', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Arra', address:'8946 West Kimberly Way', city:'Peoria', state:'AZ', zip_code:'85382')
+Person.create!(first_name: 'Thomas', last_name: 'Arra', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Lavina', last_name: 'Arra', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'LaForte', address:'65 Kendall Mountain Road', city:'Tolland', state:'CT', zip_code:'6084')
+Person.create!(first_name: 'Jason', last_name: 'LaForte', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Lisa', last_name: 'LaForte', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Wilkins', address:'2025 Spring Green Drive', city:'Wheaton', state:'IL', zip_code:'60187')
+Person.create!(first_name: 'Jeffery', last_name: 'Wilkins', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Jenni', last_name: 'Wilkins', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Fischella', address:'1862 West Cardiff Road', city:'San Dimas', state:'CA', zip_code:'91773')
+Person.create!(first_name: 'James', last_name: 'Fischella', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Wilkins', address:'204 Valle Vista Court', city:'Minooka', state:'IL', zip_code:'60447')
+Person.create!(first_name: 'James', last_name: 'Wilkins', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Judy', last_name: 'Wilkins', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Chad', last_name: 'Wilkins', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Dane', last_name: 'Wilkins', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Kelsey', last_name: 'Wilkins', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Fisher', address:'22615 Careys Camp Road', city:'Millsboro', state:'DE', zip_code:'19966')
+Person.create!(first_name: 'Joyce', last_name: 'Fisher', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Yvonne', last_name: 'Disharoon', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'LaForte', address:'38 Clearview Drive', city:'Brookfield', state:'CT', zip_code:'6804')
+Person.create!(first_name: 'Joyce', last_name: 'LaForte', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Beach', address:'1311 North Halsted Street, Apt. 503', city:'Chicago', state:'IL', zip_code:'60642')
+@person = Person.create!(first_name: 'Kara', last_name: 'Beach', party_id: @party.id, guest_allowed: true)
+Person.create!(first_name: '', last_name: '' party_id:@ party.id, is_guest: true, guest_person_id: @person.id, guest_allowed: false)
+
 @party = Party.create!(name:'Arra', address:'1225 Creekside Court', city:'Upland', state:'CA', zip_code:'91784')
+Person.create!(first_name: 'Kevin', last_name: 'Arra', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: '?', last_name: 'Arra', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Kuehn', address:'11246 West 72nd Street', city:'Burr Ridge', state:'IL', zip_code:'60527')
+Person.create!(first_name: 'Steven', last_name: 'Kuehn', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Elaine', last_name: 'Kuehn', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Tyler', last_name: 'Kuehn', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Angie', last_name: 'Kuehn', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Miller', address:'16 Marion Way', city:'Carmel', state:'NY', zip_code:'10512')
+Person.create!(first_name: 'Eric', last_name: 'Miller', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Lisa', last_name: 'Miller', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Derek', last_name: 'Miller', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Heinz', address:'34 East Ashland Avenue', city:'Phoenix', state:'AZ', zip_code:'85004')
+Person.create!(first_name: 'Charlie', last_name: 'Heinz', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'Lori', last_name: 'Heinz', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Craggs', address:'10760 71st Street', city:'Countryside', state:'IL', zip_code:'60525')
+@person = Person.create!(first_name: 'Mary', last_name: 'Craggs', party_id: @party.id, guest_allowed: true)
+Person.create!(first_name: '', last_name: '' party_id: @party.id, is_guest: true, guest_person_id: @person.id, guest_allowed: false)
+
 @party = Party.create!(name:'Pope', address:'534 East Wildwood Avenue', city:'Villa Park', state:'IL', zip_code:'60181')
+Person.create!(first_name: 'Mary', last_name: 'Pope', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: 'MaryAnn', last_name: 'Johnson', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Aschenbrenner', address:'309 O\'Neill Street', city:'Joliet', state:'IL', zip_code:'60436')
+Person.create!(first_name: 'Robert', last_name: 'Aschenbrenner', party_id: @party.id, guest_allowed: false)
+Person.create!(first_name: '?', last_name: 'Aschenbrenner', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Kreitzberger', address:'5324 South Hidden Drive', city:'Greenfield', state:'WI', zip_code:'53221')
+Person.create!(first_name: 'Myra', last_name: 'Kreitzberger', party_id: @party.id, guest_allowed: false)
+
 @party = Party.create!(name:'Ogrodny', address:'8401 Willow West Drive', city:'Willow Springs', state:'IL', zip_code:'60480')
 @party = Party.create!(name:'Beach', address:'103 Quail', city:'Countryside', state:'IL', zip_code:'60525')
 @party = Party.create!(name:'Fischella', address:'27252 Brio Circle', city:'Mission Viejo', state:'CA', zip_code:'92692')

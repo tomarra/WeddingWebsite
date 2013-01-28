@@ -1,18 +1,36 @@
 <h1>RSVP - Party Detail</h1>
 
-<%= form_for @party, :url => { :controller => "rsvp", :action => "submit" } do |f| %>
+<%= form_for @party, :url => { :controller => "rsvp", :action => "submit" }, :html => {:class => "form-horizontal"} do |f| %>
 	<%= f.fields_for :people do |builder| %>
 		<% person = builder.object %>
-		<h3><%= person.first_name %> <%= person.last_name %></h3>
-		<hr/>
+
+		<% if person.is_guest && person.first_name == "" && person.last_name == "" %>
+			<div id="div_for_person_<%= person.id.to_s %>" class="hide">
+		<% else %>
+			<div id="div_for_person_<%= person.id.to_s %>">
+				<h3><%= person.first_name %> <%= person.last_name %></h3>
+		<% end %>
+			
 
 			<% if person.is_guest? %>
 				<div>
 					<h4>Guest for <%= person.guest_of.first_name %> <%= person.guest_of.last_name %></h4>
+				
+					<div class="control-group">
+						<%= builder.label :first_name, "First Name:", :class => "control-label" %>
+						<div class="controls">
+							<%= builder.text_field :first_name, :placeholder => "First Name" %>
+						</div>
+					</div>
+					<div class="control-group">
+						<%= builder.label :last_name, "Last Name:", :class => "control-label" %>
+						<div class="controls">
+							<%= builder.text_field :last_name, :placeholder => "Last Name" %>
+						</div>
+					</div>
 				</div>
-				<%= builder.text_field :first_name %>
-				<%= builder.text_field :last_name %>
 			<% else %>
+				<hr/>
 				<label class="radio">
 					<%= builder.radio_button :attending, true, :onchange => "attendingRadioChange(" + person.id.to_s + ", true);", :onclick => "attendingRadioChange(" + person.id.to_s + ", true);"%> 
 					<%= builder.label :attending_true, "Attending" %>
@@ -33,21 +51,24 @@
 				</div>
 
 				<% if person.guest_allowed %>
-					<div>
-						Bringing Guest
-					</div>
-					<label class="radio">
-						<%= builder.radio_button :bringing_guest, true %> 
-						<%= builder.label :bringing_guest_true, "Yes" %>
-					</label>
+					<div class="control-group">
+						<%= builder.label(:bringing_guest, "Bringing Guest", :class => "control-label") %>
+						<div class="controls" >
+							<label class="radio">
+								<%= builder.radio_button :bringing_guest, true, :onchange => "bringingGuestRadioChange(" + person.id.to_s + ", true);", :onclick => "bringingGuestRadioChange(" + person.id.to_s + ", true);" %> 
+								<%= builder.label :bringing_guest_true, "Yes" %>
+							</label>
 
-					<label class="radio">
-						<%= builder.radio_button :bringing_guest, false %> 
-						<%= builder.label :bringing_guest_false, "No" %>
-					</label>
+							<label class="radio">
+								<%= builder.radio_button :bringing_guest, false, :onchange => "bringingGuestRadioChange(" + person.id.to_s + ", false);", :onclick => "bringingGuestRadioChange(" + person.id.to_s + ", false);" %> 
+								<%= builder.label :bringing_guest_false, "No" %>
+							</label>
+						</div>
+					</div>
 				<% end%>
 			</div>
 
+		</div>
 	<% end %>
 
 	<%= f.submit :class => 'btn' %>
@@ -61,6 +82,22 @@
 		}
 		else {
 			//Hide the extra options
+			document.getElementById("details_for_" + personId).setAttribute("class", "hide");
+		}
+	}
+
+	function bringingGuestRadioChange(personId, bringingGuest) {
+		//MAJOR HACK
+		personId++;
+
+		if(bringingGuest) {
+			//Show the extra options
+			document.getElementById("div_for_person_" + personId).setAttribute("class", "show");
+			document.getElementById("details_for_" + personId).setAttribute("class", "show");
+		}
+		else {
+			//Hide the extra options
+			document.getElementById("div_for_person_" + personId).setAttribute("class", "hide");
 			document.getElementById("details_for_" + personId).setAttribute("class", "hide");
 		}
 	}
