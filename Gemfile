@@ -6,6 +6,7 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'thin'
 gem 'rails_config'
+gem 'haml'
 
 # ActiveAdmin
 gem 'activeadmin'
