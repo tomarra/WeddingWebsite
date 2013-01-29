@@ -42,7 +42,7 @@ class RsvpController < ApplicationController
 		end
 
 		@party = Party.includes(:people).find(params[:id])
-		@meal_options = ["Chicken", "Vegitarian"]
+		@meal_options = Settings.rsvp_meal_options
 	end
 
 	def submit
