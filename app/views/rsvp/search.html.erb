@@ -5,6 +5,7 @@
 		<thead>
 			<tr>
 				<th>Party Name</th>
+				<th># of Guests</th>
 				<th>Zip Code</th>
 				<th></th>
 			</tr>
@@ -13,6 +14,7 @@
 			<% for party in @parties %>
 				<tr>
 					<td><%= party.name %></td>
+					<td><%= party.people.count %></td>
 					<td><%= party.zip_code %></td>
 					<td><%= button_tag "Select Party", :class => "btn", :onclick => "goToParty(" + party.id.to_s + ")" %></td>
 				</tr>
