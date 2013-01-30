@@ -37,16 +37,19 @@ xmlns:html="http://www.w3.org/TR/REC-html40">
    <Column ss:Width="114"/>
    <Column ss:Width="114"/>
    <Column ss:Width="114"/>
+   <Column ss:Width="114"/>
    <Row>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Party Name</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Person</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Attending</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Is Guest</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Meal</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Meal Notes</Data></Cell>
   </Row>
   <% @parties.each do |party| %>
   <Row>
     <Cell ss:StyleID="s63"><Data ss:Type="String"><%= party.name %></Data></Cell>
+    <Cell ss:StyleID="s62"></Cell>
     <Cell ss:StyleID="s62"></Cell>
     <Cell ss:StyleID="s62"></Cell>
     <Cell ss:StyleID="s62"></Cell>
@@ -75,6 +78,7 @@ xmlns:html="http://www.w3.org/TR/REC-html40">
       </Data>
     </Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String"><%= person.meal %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= person.meal_notes %></Data></Cell>
   </Row>
   <% end %>
   <% end %>
