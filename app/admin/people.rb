@@ -11,7 +11,7 @@ ActiveAdmin.register Person do
 		bool_column :guest_allowed
 		bool_column :is_guest
 		column :guest_of
-		column :attending
+		bool_column :attending
 		column :meal
 		column :meal_notes
 

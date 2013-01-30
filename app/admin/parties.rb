@@ -1,4 +1,7 @@
 ActiveAdmin.register Party do
+	config.sort_order = "id_asc"
+  	config.per_page = 25
+
 	index do
 		column :name
 		column :address
