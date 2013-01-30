@@ -17,6 +17,23 @@ ActiveAdmin.register Person do
 
 		default_actions
 	end
+
+	show do |person|
+		attributes_table do
+			row :id
+			row :first_name
+			row :last_name
+			row :guest_allowed
+			row :is_guest
+			row :guest_of
+			row :party
+			row :attending
+			row :meal
+			row :meal_notes
+			row :bringing_guest
+		end
+		active_admin_comments
+	end
   
   	csv do
   		column :id 
