@@ -4,10 +4,10 @@
 	<%= f.fields_for :people do |builder| %>
 		<% person = builder.object %>
 
-		<% if person.is_guest && person.first_name == "" && person.last_name == "" %>
+		<% if person.is_guest %>
 			<div id="div_for_person_<%= person.id.to_s %>" class="hide">
 		<% else %>
-			<div id="div_for_person_<%= person.id.to_s %>">
+			<div id="div_for_person_<%= person.id.to_s %>" style="padding-top:10px;">
 				<h3><%= person.first_name %> <%= person.last_name %></h3>
 		<% end %>
 			
@@ -106,7 +106,7 @@
 			document.getElementById("details_for_" + personId).setAttribute("class", "show");
 		}
 		else {
-			//Hide the extra options
+			//Hide the extra options and reset the form data
 			document.getElementById("div_for_person_" + personId).setAttribute("class", "hide");
 			document.getElementById("details_for_" + personId).setAttribute("class", "hide");
 		}
