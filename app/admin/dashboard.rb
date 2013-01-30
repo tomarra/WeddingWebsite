@@ -30,5 +30,11 @@ ActiveAdmin.register_page "Dashboard" do
     #   end
     # end
 
+    section "People Details" do
+        div do
+            render "people_details"
+        end
+    end
+    
   end # content
 end

@@ -1,0 +1,8 @@
+<% 
+total_people = Person.count(:all).to_s 
+attending = Person.count(:all, :conditions => "attending = TRUE")
+
+%>
+
+Attending: <%= attending %><br/>
+Total People: <%= total_people %>
