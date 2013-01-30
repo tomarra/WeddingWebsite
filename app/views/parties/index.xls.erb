@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/TR/REC-html40">
+<Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+  <Alignment ss:Vertical="Bottom"/>
+  <Borders/>
+  <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Color="#000000"/>
+  <Interior/>
+  <NumberFormat/>
+  <Protection/>
+  </Style>
+  <Style ss:ID="s62">
+  <Interior ss:Color="#969696" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s63">
+  <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Color="#000000"
+  ss:Bold="1"/>
+  <Interior ss:Color="#969696" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s67">
+  <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+  <Font ss:FontName="Calibri" ss:Size="14" ss:Color="#000000" ss:Bold="1"/>
+  <Interior ss:Color="#808080" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s70">
+  <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+  </Style>
+</Styles>
+<Worksheet ss:Name="Sheet1">
+  <Table>
+   <Column ss:Width="82"/>
+   <Column ss:Width="133"/>
+   <Column ss:Width="114"/>
+   <Column ss:Width="114"/>
+   <Column ss:Width="114"/>
+   <Row>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Party Name</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Person</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Attending</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Is Guest</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Meal</Data></Cell>
+  </Row>
+  <% @parties.each do |party| %>
+  <Row>
+    <Cell ss:StyleID="s63"><Data ss:Type="String"><%= party.name %></Data></Cell>
+    <Cell ss:StyleID="s62"></Cell>
+    <Cell ss:StyleID="s62"></Cell>
+    <Cell ss:StyleID="s62"></Cell>
+    <Cell ss:StyleID="s62"></Cell>
+  </Row>
+
+  <% party.people.each do |person| %>
+  <% if person.first_name != "" && person.last_name != "" %>
+  <Row>
+    <Cell><Data ss:Type="String"></Data></Cell>
+    <Cell><Data ss:Type="String"><%= person.first_name %> <%= person.last_name %></Data></Cell>
+    <Cell ss:StyleID="s70">
+      <Data ss:Type="String">
+        <% if person.attending %>
+        Yes
+        <% elsif person.attending == false %>
+        No
+        <% end %>
+      </Data>
+    </Cell>
+    <Cell ss:StyleID="s70">
+      <Data ss:Type="String">
+        <% if person.is_guest %>
+        Yes
+        <% end %>
+      </Data>
+    </Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String"><%= person.meal %></Data></Cell>
+  </Row>
+  <% end %>
+  <% end %>
+
+  <% end %>
+</Table>
+</Worksheet>
+</Workbook>

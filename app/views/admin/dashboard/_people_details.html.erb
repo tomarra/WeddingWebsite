@@ -5,4 +5,6 @@ attending = Person.count(:all, :conditions => "attending = TRUE")
 %>
 
 Attending: <%= attending %><br/>
-Total People: <%= total_people %>
+Total People: <%= total_people %><br/>
+
+<%= link_to "Excel", parties_path(format: "xls") %>

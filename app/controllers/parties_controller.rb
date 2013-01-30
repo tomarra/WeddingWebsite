@@ -6,6 +6,7 @@ class PartiesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.xls
       format.json { render json: @parties }
     end
   end
