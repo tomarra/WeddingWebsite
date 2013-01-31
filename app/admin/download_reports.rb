@@ -1,4 +1,6 @@
 ActiveAdmin.register_page "Download Reports" do
+	menu false
+
 	content do
 		para "Hello World"
 	end

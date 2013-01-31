@@ -5,7 +5,18 @@ not_attending = Person.count(:all, :conditions => "attending = FALSE")
 no_response = Person.all(:conditions => "attending IS NULL").count()
 %>
 
-Attending: <%= attending %><br/>
-Not Attending: <%= not_attending %><br/>
-Haven't Responded: <%= no_response %><br/>
-Total People: <%= total_people %><br/>
+<div>
+	<b>Attending:</b> <%= attending %>
+</div>
+
+<div>
+	<b>Not Attending:</b> <%= not_attending %>
+</div>
+
+<div>
+	<b>Haven't Responded:</b> <%= no_response %>
+</div>
+
+<div>
+	<b>Total People:</b> <%= total_people %>
+</div>
