@@ -1,0 +1,11 @@
+<% 
+total_people = Person.count(:all)
+attending = Person.count(:all, :conditions => "attending = TRUE")
+not_attending = Person.count(:all, :conditions => "attending = FALSE")
+no_response = Person.all(:conditions => "attending IS NULL").count()
+%>
+
+Attending: <%= attending %><br/>
+Not Attending: <%= not_attending %><br/>
+Haven't Responded: <%= no_response %><br/>
+Total People: <%= total_people %><br/>
