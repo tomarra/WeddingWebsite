@@ -81,4 +81,6 @@ WeddingWebsite::Application.routes.draw do
   match 'rsvp/search' => 'rsvp#search'
   match 'rsvp/party_detail/:id' => 'rsvp#party_detail'
   match 'rsvp/submit/:id' => 'rsvp#submit'
+
+  match '/admin/download_reports/download' => 'admin/download_reports#download'
 end
