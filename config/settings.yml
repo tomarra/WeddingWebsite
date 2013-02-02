@@ -12,4 +12,4 @@ wedding_date_year: 2013
 #RSVP
 rsvp_active: true
 rsvp_form_password: arra
-rsvp_meal_options: ["Chicken", "Veggie", "Child 1-10"]
+rsvp_meal_options: ["Chicken", "Vegetarian", "Child 4-12"]

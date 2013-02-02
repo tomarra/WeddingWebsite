@@ -30,7 +30,7 @@ xmlns:html="http://www.w3.org/TR/REC-html40">
   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
   </Style>
 </Styles>
-<Worksheet ss:Name="Sheet1">
+<Worksheet ss:Name="Data">
   <Table>
    <Column ss:Width="82"/>
    <Column ss:Width="133"/>
@@ -62,20 +62,10 @@ xmlns:html="http://www.w3.org/TR/REC-html40">
     <Cell><Data ss:Type="String"></Data></Cell>
     <Cell><Data ss:Type="String"><%= person.first_name %> <%= person.last_name %></Data></Cell>
     <Cell ss:StyleID="s70">
-      <Data ss:Type="String">
-        <% if person.attending %>
-        Yes
-        <% elsif person.attending == false %>
-        No
-        <% end %>
-      </Data>
+      <Data ss:Type="String"><% if person.attending %>Yes<% elsif person.attending == false %>No<% end %></Data>
     </Cell>
     <Cell ss:StyleID="s70">
-      <Data ss:Type="String">
-        <% if person.is_guest %>
-        Yes
-        <% end %>
-      </Data>
+      <Data ss:Type="String"><% if person.is_guest %>Yes<% end %></Data>
     </Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String"><%= person.meal %></Data></Cell>
     <Cell><Data ss:Type="String"><%= person.meal_notes %></Data></Cell>
@@ -85,5 +75,49 @@ xmlns:html="http://www.w3.org/TR/REC-html40">
 
   <% end %>
 </Table>
+</Worksheet>
+<Worksheet ss:Name="Totals">
+<Table x:FullColumns="1"
+ x:FullRows="1" ss:DefaultColumnWidth="65" ss:DefaultRowHeight="15">
+ <Row>
+  <Cell><Data ss:Type="String">Attending</Data></Cell>
+ </Row>
+ <Row>
+  <Cell><Data ss:Type="String">Yes</Data></Cell>
+  <Cell ss:Formula="=COUNTIF(Data!C[1],&quot;Yes&quot;)"></Cell>
+ </Row>
+ <Row>
+  <Cell><Data ss:Type="String">No</Data></Cell>
+  <Cell ss:Formula="=COUNTIF(Data!C[1],&quot;No&quot;)"></Cell>
+ </Row>
+ <Row ss:Index="5" ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Meals</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Chicken</Data></Cell>
+    <Cell ss:Formula="=COUNTIF(Data!C[3], &quot;Chicken&quot;)"></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Vegetarian</Data></Cell>
+    <Cell ss:Formula="=COUNTIF(Data!C[3], &quot;Vegetarian&quot;)"></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Child 4-12</Data></Cell>
+    <Cell ss:Formula="=COUNTIF(Data!C[3], &quot;Child 4-12&quot;)"></Cell>
+   </Row>
+</Table>
+<WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+ <PageLayoutZoom>0</PageLayoutZoom>
+ <Selected/>
+ <Panes>
+  <Pane>
+   <Number>3</Number>
+   <ActiveRow>1</ActiveRow>
+   <ActiveCol>1</ActiveCol>
+  </Pane>
+ </Panes>
+ <ProtectObjects>False</ProtectObjects>
+ <ProtectScenarios>False</ProtectScenarios>
+</WorksheetOptions>
 </Worksheet>
 </Workbook>
