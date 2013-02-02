@@ -670,9 +670,9 @@ Person.create!(first_name: '', last_name: '', party_id: @party.id, is_guest: tru
 Person.create!(first_name: 'Justin', last_name: 'Abrams', party_id: @party.id, guest_allowed: false, is_guest: false)
 Person.create!(first_name: '?', last_name: 'Abrams', party_id: @party.id, guest_allowed: false, is_guest: false)
 
-#@party = Party.create!(name:'Harris', address:'', city:'', state:'', zip_code:'')
-#@person = Person.create!(first_name: 'Kaitlyn', last_name: 'Harris', party_id: @party.id, guest_allowed: true)
-#Person.create!(first_name: '', last_name: '', party_id: @party.id, is_guest: true, guest_person_id: @person.id, guest_allowed: false)
+@party = Party.create!(name:'Harris', address:'2 E 8th Street Apt 2305B', city:'Chicago', state:'IL', zip_code:'60605')
+@person = Person.create!(first_name: 'Kaitlyn', last_name: 'Harris', party_id: @party.id, guest_allowed: true)
+Person.create!(first_name: '', last_name: '', party_id: @party.id, is_guest: true, guest_person_id: @person.id, guest_allowed: false)
 
 @party = Party.create!(name:'Som', address:'11 North Green Street Unit 3B', city:'Chicago', state:'IL', zip_code:'60607')
 Person.create!(first_name: 'Kushal', last_name: 'Som', party_id: @party.id, guest_allowed: false, is_guest: false)
@@ -680,7 +680,7 @@ Person.create!(first_name: 'Sonya', last_name: 'Som', party_id: @party.id, guest
 
 @party = Party.create!(name:'Patel', address:'816 South Wilmette Avenue', city:'Westmont', state:'IL', zip_code:'60559')
 Person.create!(first_name: 'Mahesh', last_name: 'Patel', party_id: @party.id, guest_allowed: false, is_guest: false)
-Person.create!(first_name: '?', last_name: 'Patel', party_id: @party.id, guest_allowed: false, is_guest: false)
+Person.create!(first_name: 'Vina', last_name: 'Patel', party_id: @party.id, guest_allowed: false, is_guest: false)
 
 @party = Party.create!(name:'Voldahl', address:'824 Williamson Street Apartment #108', city:'Madison', state:'WI', zip_code:'53703')
 @person = Person.create!(first_name: 'Emily', last_name: 'Voldahl', party_id: @party.id, guest_allowed: true)
