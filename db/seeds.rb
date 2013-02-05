@@ -4,11 +4,14 @@
 #@person = Person.create!(first_name: "Tommy", last_name: "Arra", party_id: @party.id, guest_allowed: true, is_guest: false)
 #Person.create!(first_name: '', last_name: '', party_id:@party.id, is_guest: true, guest_person_id: @person.id, guest_allowed: false)
 
-#Start real data
-
 #Photographer and DJ
-#@party = Party.create!(name:'', address:'', city:'', state:'', zip_code:'')
+@party = Party.create!(name:'Photographer', address:'N/A', city:'N/A', state:'N/A', zip_code:'11111')
+Person.create!(first_name: 'Photographer', last_name: 'Photographer', party_id: @party.id, guest_allowed: false, is_guest: false, attending: true)
 
+@party = Party.create!(name:'DJ', address:'N/A', city:'N/A', state:'N/A', zip_code:'11111')
+Person.create!(first_name: 'DJ', last_name: 'DJ', party_id: @party.id, guest_allowed: false, is_guest: false, attending: true)
+
+#Start real data
 @party = Party.create!(name:'Kula', address:'539 Eldon', city:'Downers Grove', state:'IL', zip_code:'60516')
 Person.create!(first_name: 'Angie', last_name: 'Kula', party_id: @party.id, guest_allowed: false, is_guest: false)
 Person.create!(first_name: 'Gary', last_name: 'Kula', party_id: @party.id, guest_allowed: false, is_guest: false)
