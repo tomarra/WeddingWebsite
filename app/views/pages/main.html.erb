@@ -6,7 +6,12 @@
   <div class="span8">
     <div class="well pagination-centered">
       <h1>Tommy Arra & Sarah Cervak</h1>
-      <h3>April 6, 2013 - <%= @daysToGo %> <%=t :days_to_go %></h3>
+      <% if @daysToGo >= 0 %>
+        <h3>April 6, 2013 - <%= @daysToGo %> <%=t :days_to_go %></h3>
+      <% else %>
+        <h3>April 6, 2013</h3>
+      <% end %>
+        
       
       <div class="row-fluid">
         <div id="mainCarousel" class="carousel slide">
