@@ -18,9 +18,9 @@ Person.create!(first_name: 'Jeffery', last_name: 'Aschenbrenner', party_id: @par
 Person.create!(first_name: 'Roseanne', last_name: 'Aschenbrenner', party_id: @party.id, guest_allowed: false, is_guest: false)
 Person.create!(first_name: 'Daniel', last_name: 'Aschenbrenner', party_id: @party.id, guest_allowed: false, is_guest: false)
 
-#@party = Party.create!(name:'Aschenbrenner', address:'', city:'', state:'', zip_code:'')
-#Person.create!(first_name: 'Jeffery', last_name: 'Aschenbrenner', party_id: @party.id, guest_allowed: false, is_guest: false)
-#Person.create!(first_name: 'Darcy', last_name: 'Bamford McIsaac', party_id: @party.id, guest_allowed: false, is_guest: false)
+@party = Party.create!(name:'Aschenbrenner', address:'1226 Olive Street Apt. 1601', city:'St. Louis', state:'MO', zip_code:'63103')
+Person.create!(first_name: 'Jeffery', last_name: 'Aschenbrenner', party_id: @party.id, guest_allowed: false, is_guest: false)
+Person.create!(first_name: 'Darcy', last_name: 'Bamford McIsaac', party_id: @party.id, guest_allowed: false, is_guest: false)
 
 @party = Party.create!(name:'Doran', address:'351 Pavonia Circle', city:'Marlton', state:'NJ', zip_code:'8053')
 Person.create!(first_name: 'Kathleen', last_name: 'Doran', party_id: @party.id, guest_allowed: false, is_guest: false)
