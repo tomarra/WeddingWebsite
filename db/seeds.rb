@@ -631,7 +631,8 @@ Person.create!(first_name: 'Michael', last_name: 'Wilson', party_id: @party.id, 
 Person.create!(first_name: 'Lacey', last_name: 'Wilson', party_id: @party.id, guest_allowed: false, is_guest: false)
 
 @party = Party.create!(name:'Arra', address:'7221 Wolf Road A8', city:'Indian Head Park', state:'IL', zip_code:'60525')
-Person.create!(first_name: 'Robert', last_name: 'Arra', party_id: @party.id, guest_allowed: false, is_guest: false)
+@person = Person.create!(first_name: 'Robert', last_name: 'Arra', party_id: @party.id, guest_allowed: true, is_guest: false)
+Person.create!(first_name: '', last_name: '', party_id: @party.id, is_guest: true, guest_person_id: @person.id, guest_allowed: false)
 
 @party = Party.create!(name:'Arra', address:'8317 Willow West Drive', city:'Willow Springs', state:'IL', zip_code:'60480')
 @person = Person.create!(first_name: 'Christopher', last_name: 'Arra', party_id: @party.id, guest_allowed: true, is_guest: false)
