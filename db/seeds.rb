@@ -43,7 +43,7 @@ Person.create!(first_name: 'James', last_name: 'Blank', party_id: @party.id, gue
 Person.create!(first_name: 'Kathleen', last_name: 'Blank', party_id: @party.id, guest_allowed: false, is_guest: false)
 Person.create!(first_name: 'Kelly', last_name: 'Blank', party_id: @party.id, guest_allowed: false, is_guest: false)
 
-@party = Party.create!(name:'Blank', address:'?', city:'?', state:'IN', zip_code:'?')
+@party = Party.create!(name:'Blank', address:'26 W. Washington Apt 7082', city:'Indianapolis', state:'IN', zip_code:'46204')
 Person.create!(first_name: 'Samantha', last_name: 'Blank', party_id: @party.id, guest_allowed: false, is_guest: false)
 Person.create!(first_name: 'Alex', last_name: 'Trueblood', party_id: @party.id, guest_allowed: false, is_guest: false)
 
