@@ -14,6 +14,7 @@ ActiveAdmin.register Person do
 		bool_column :attending
 		column :meal
 		column :meal_notes
+        column :updated_at
 
 		default_actions
 	end
