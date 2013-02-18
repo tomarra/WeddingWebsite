@@ -5,6 +5,12 @@ ActiveAdmin.register Person do
   	config.sort_order = "id_asc"
   	config.per_page = 25
 
+    filter :first_name
+    filter :last_name
+    filter :guest_allowed
+    filter :is_guest
+    filter :attending, :as => :select
+
 	index do
 		column :first_name
 		column :last_name
