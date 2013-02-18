@@ -21,6 +21,12 @@ ActiveAdmin.register Party do
 			row :state
 			row :zip_code
 		end
-		active_admin_comments
+
+		panel "People" do
+			table_for party.people do |t|
+		    	t.column("Name") { |person| person.first_name + " " + person.last_name }
+		    	t.column("Attending") { |person| (person.attending ? "Yes" : "No")}
+		    end
+		end
 	end
 end

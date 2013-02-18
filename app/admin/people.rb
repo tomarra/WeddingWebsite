@@ -39,16 +39,5 @@ ActiveAdmin.register Person do
 			row :meal_notes
 			row :bringing_guest
 		end
-		active_admin_comments
 	end
-  
-  	csv do
-  		column :id 
-  		column :first_name
-  		column :last_name
-  		column :is_guest
-  		column :attending
-  		column :meal
-  		column :meal_notes
-  	end
 end
