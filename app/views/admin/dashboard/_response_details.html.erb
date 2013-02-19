@@ -20,3 +20,7 @@ no_response = Person.all(:conditions => "attending IS NULL").count()
 <div>
 	<b>Total People:</b> <%= total_people %>
 </div>
+
+<div>
+    <%= link_to "Full Report", "/admin/download_reports/full_report.xls" %>
+</div>

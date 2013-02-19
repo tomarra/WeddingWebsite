@@ -14,13 +14,20 @@ ActiveAdmin.register_page "Dashboard" do
         end
 
         column do
-            panel "Download Reports" do
+            panel "Recent Responses" do
                 div do
-                    render "download_report_links"
+                    table_for Person.order("updated_at desc").limit(10) do
+                      column "Name" do |person|
+                        person.first_name + " " + person.last_name
+                      end
+                      bool_column :attending
+                      column :meal
+                      column :meal_notes
+                    end
                 end
             end
         end
-     end
+      end
     
   end # content
 end
