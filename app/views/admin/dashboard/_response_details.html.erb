@@ -3,24 +3,48 @@ total_people = Person.count(:all)
 attending = Person.count(:all, :conditions => "attending = TRUE")
 not_attending = Person.count(:all, :conditions => "attending = FALSE")
 no_response = Person.all(:conditions => "attending IS NULL").count()
+
+chicken_count = Person.count(:all, :conditions => "meal = 'Chicken'")
+vegetarian_count = Person.count(:all, :conditions => "meal = 'Vegetarian'")
+chicken_fingers_count = Person.count(:all, :conditions => "meal = 'Chicken Fingers (Ages 4-12)'")
+none_count = Person.count(:all, :conditions => "meal = 'None (Under Age 4)'")
 %>
 
-<div>
-	<b>Attending:</b> <%= attending %>
+<div id="people_stats">
+    <h3>People Stats</h3>
+    <div>
+    	<b>Attending:</b> <%= attending %>
+    </div>
+
+    <div>
+    	<b>Not Attending:</b> <%= not_attending %>
+    </div>
+
+    <div>
+    	<b>Haven't Responded:</b> <%= no_response %>
+    </div>
+
+    <div>
+    	<b>Total People:</b> <%= total_people %>
+    </div>
 </div>
 
-<div>
-	<b>Not Attending:</b> <%= not_attending %>
+<div id="meal_stats" style="padding-top:20px;">
+    <h3>Meal Stats</h3>
+    <div>
+        <b>Chicken:</b> <%= chicken_count %>
+    </div>
+    <div>
+        <b>Vegetarian:</b> <%= vegetarian_count %>
+    </div>
+    <div>
+        <b>Chicken Fingers:</b> <%= chicken_fingers_count %>
+    </div>
+    <div>
+        <b>None:</b> <%= none_count %>
+    </div>
 </div>
 
-<div>
-	<b>Haven't Responded:</b> <%= no_response %>
-</div>
-
-<div>
-	<b>Total People:</b> <%= total_people %>
-</div>
-
-<div>
+<div style="padding-top:20px;">
     <%= link_to "Full Report", "/admin/download_reports/full_report.xls" %>
 </div>
