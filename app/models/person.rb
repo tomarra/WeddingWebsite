@@ -4,6 +4,9 @@ class Person < ActiveRecord::Base
 
   scope :invited, where(:is_guest => false)
   scope :guest, where(:is_guest => true)
+  scope :are_attending, where(:attending => true)
+  scope :not_attending, where(:attending => false)
+  scope :no_response, where("attending IS NULL")
 
   attr_accessible :first_name, :guest_allowed, :guest_person_id, :is_guest, :last_name, :party_id, :attending, :meal, :meal_notes, :bringing_guest
 

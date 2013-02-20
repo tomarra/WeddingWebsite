@@ -1,9 +1,4 @@
 <% 
-total_people = Person.count(:all)
-attending = Person.count(:all, :conditions => "attending = TRUE")
-not_attending = Person.count(:all, :conditions => "attending = FALSE")
-no_response = Person.all(:conditions => "attending IS NULL").count()
-
 chicken_count = Person.count(:all, :conditions => "meal = 'Chicken'")
 vegetarian_count = Person.count(:all, :conditions => "meal = 'Vegetarian'")
 chicken_fingers_count = Person.count(:all, :conditions => "meal = 'Chicken Fingers (Ages 4-12)'")
@@ -13,19 +8,19 @@ none_count = Person.count(:all, :conditions => "meal = 'None (Under Age 4)'")
 <div id="people_stats">
     <h3>People Stats</h3>
     <div>
-    	<b>Attending:</b> <%= attending %>
+    	<b>Attending:</b> <%= Person.are_attending.count %>
     </div>
 
     <div>
-    	<b>Not Attending:</b> <%= not_attending %>
+    	<b>Not Attending:</b> <%= Person.not_attending.count %>
     </div>
 
     <div>
-    	<b>Haven't Responded:</b> <%= no_response %>
+    	<b>Haven't Responded:</b> <%= Person.no_response.count %>
     </div>
 
     <div>
-    	<b>Total People:</b> <%= total_people %>
+    	<b>Total People:</b> <%= Person.all.count %>
     </div>
 </div>
 
