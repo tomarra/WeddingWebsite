@@ -34,6 +34,13 @@ class RsvpController < ApplicationController
 	end
 
 	def party_detail
+		logger.warn "*** BEGIN RAW REQUEST HEADERS ***"
+self.request.env.each do |header|
+  logger.warn "HEADER KEY: #{header[0]}"
+  logger.warn "HEADER VAL: #{header[1]}"
+end
+logger.warn "*** END RAW REQUEST HEADERS ***"
+		
 		if request.headers['referer'].to_s == nil || !request.headers['referer'].to_s.include?("rsvp/search")
 			flash[:error] = "Please search for your party"
 			render :action => 'main'
